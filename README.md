@@ -21,6 +21,6 @@ https://www.terraform.io/docs/backends/types/s3.html
 
 ### When removing the Terraform backend
 
-```sh
-aws cloudformation delete-stack --stack-name <STACK_NAME>
-```
+	```sh
+	aws cloudformation delete-stack --stack-name <STACK_NAME>
+	```
