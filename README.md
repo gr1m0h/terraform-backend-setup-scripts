@@ -9,13 +9,13 @@ https://www.terraform.io/docs/backends/types/s3.html
 1. Run init.sh
 
     ```sh
-    bash init.sh <STACK_NAME> <S3_BUCKET_NAME> <DYNAMODB_TABLE_NAME>
+    $ bash init.sh <STACK_NAME> <S3_BUCKET_NAME> <DYNAMODB_TABLE_NAME>
     ```
 
 1. terraform init
 
     ```sh
-    terraform init \
+    $ terraform init \
       -backend-config="bucket=<S3_BUCKET_NAME>" \
       -backend-config="dynamodb_table=<DYNAMODB_TABLE_NAME>"
     ```
@@ -23,5 +23,5 @@ https://www.terraform.io/docs/backends/types/s3.html
 ### When removing the Terraform backend
 
   ```sh
-  aws cloudformation delete-stack --stack-name <STACK_NAME>
+  $ aws cloudformation delete-stack --stack-name <STACK_NAME>
   ```
