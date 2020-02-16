@@ -29,10 +29,16 @@ aws cloudformation deploy \
 	S3BucketName="${BUCKET_NAME}" \
 	DynamoDBTableName="${TABLE_NAME}" \
 
-cat <<EOS
-{
-	"stack_name": "${STACK_NAME}",
-	"s3_bucket_name": "$(getS3BucketName)",
-	"dynamodb_name": "$(getDynamoDBName)"
-}
-EOS
+if [ -z "${STACK_NAME}" ]; then
+  exit 1
+fi
+
+if [ -z "$(getS3BucketName)" ]; then
+  exit 1
+fi
+
+if [ -z "$(getDynamoDBName)" ]; then
+  exit 1
+fi
+
+exit 0
